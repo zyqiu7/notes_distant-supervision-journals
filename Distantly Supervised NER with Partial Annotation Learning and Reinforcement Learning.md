@@ -8,9 +8,12 @@
 基于强化学习的实例选择（Instance Selector）——噪声标注问题
 
 ## 引言
-- 深度学习NER常用步骤（Standardlized Steps）:
+- **过往文献综述中 深度学习NER常用步骤（Standardlized Steps）**:
   1. BiLSTM——Encoding
   2. CRF——Jointly Label Decoding
-  3. 附加步骤：BiLSTM和CNN——字/词级别表示（word-level representation）
+  3. 附加步骤：BiLSTM和CNN——字/词级别表示（word-level representation）  
+  
 - 之前的NER集中关注一些预定义的标注实体类型，但现在不同领域都出现了大量无人工标注的新实体类型，人工标注将花费大量精力
 - Mintz（2009）最早提出远程监督？
+ ** 本文方法**
+
