@@ -15,7 +15,17 @@
   
 - 之前的NER集中关注一些预定义的标注实体类型，但现在不同领域都出现了大量无人工标注的新实体类型，人工标注将花费大量精力
 - Mintz（2009）最早提出远程监督？  
--  ** 本文方法**
+-  **本文方法**  
   目的： 无人工标注新命名实体类型，如——商品（PDT）等
-  1. 
+  1. 构建新实体类型字典，如：商品（PDT）—— 衬衫/卫衣/皮鞋/工装
+  2. 根据字典中已有的商品，对文本进行自动标注，按以上例子，则：衬衫，卫衣——标注为正例， 皮带——不完全标注， 工装鞋——噪声标注（标注出现错误，一个实体被拆出一部分，只能标出工装）
+  3. 用能从局部标注（partial annotations）学习的**extended CRF-PA model**(Tsuboi et al., 2008)处理incomplete annotation问题；用**强化学习**选择出远程监督中的正例，以处理noisy annotation问题
+  （extended CRF-PA model: ）
+
+## 基础架构
+- 我们的工作基于NER的SoA（Lample，2016）
+- 命名实体Tagger：char embedding ——> Encoder：（BiLSTM ——> MLP）——> CRF;  
+- 实例选择器 Instance Selector: 强化学习
+
+  
 
