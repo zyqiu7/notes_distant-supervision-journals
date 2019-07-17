@@ -25,7 +25,7 @@
 ## 基础架构
 - 我们的工作基于NER的SoA（Lample，2016）
 - 命名实体（NE）Tagger：char embedding ——> Encoder：（BiLSTM ——> MLP）——> CRF; 
-  1. 输入层（input layer）
+  1. 输入层（input layer）：沿用（Lample，2016）的方法，将已预训练的embedding
 - 实例选择器 Instance Selector: 强化学习
 
   
