@@ -1,5 +1,5 @@
 # 基于深度强化学习的远程监督关系提取  
-北邮，UCSB
+北邮，UCSB (2018)
 
 ## 对抗远程监督噪声相关工作
 - 远程监督已成为关系提取中的标准步骤， 但远程监督标注的样本通常非常嘈杂。  
@@ -14,4 +14,8 @@
   [Surdeanu, 2012, Multi-instance multi-label learning for relation extraction] 
   5. 结合外部知识丰富实体对表达，提高注意力权重准确度（combine the external knowledge to rich the representation of entity pair, to improve the accuracy of attention weights）  
   [Ji,2017,Distant supervision for relation extraction with sentence-level attention and entity descriptions]
-  6. **本文方法**： 通过评估关系分类器在喂入这些远程监督标注的例子的性能，使用无监督的强化学习鉴别标注的反正例（FP），并将这些例子重新归为反例（TN）。
+  6. 强化学习作实例选择器（RL as Instance Selector）方法  
+    （1） **本文方法**： 通过评估关系分类器在喂入这些远程监督标注的例子的性能，使用无监督的强化学习鉴别标注的反正例（FP），并将这些例子重新归为反例（TN）。  强化学习的**奖励由关系分类器的性能变化计算**（the reward is intuitively reﬂected by the performance change of the relation classiﬁer）。  
+    （2）Feng(2018): 强化学习的奖励由预测概率计算(calculated from the prediction probabilities)[Reinforcement learning for relation classification from noisy data]
+
+## 方法描述
