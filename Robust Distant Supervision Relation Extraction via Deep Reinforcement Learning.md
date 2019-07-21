@@ -25,5 +25,9 @@
   （2）策略网络的stochastic policy防止agent卡死在某一状态（intermediate state）
 #### 强化学习中的状态表示（States）
 - 将句子转为向量（sematic and syntatic infomation of a sentence is represented by a continuous real value vector）
-- utilize both word embedding and pposution embedding to convert sentences into vectors 
+- 使用字词嵌入以及位置嵌入（utilize both word embedding and pposution embedding to convert sentences into vectors ）
+- 表示当前状态的向量由两部分决定：表示当前句子的向量以及表示已被移除的之前句子的向量（the concatenation of the current state sentence vector and the average vector of the remove dvector in early stages）其中，表示当前句子的的向量会被赋予较高的权重，以放大当前句子及其对action所产生的影响之间的联系
+#### 强化学习中actor的action类型
+- 我们的实验中对每种关系类型都有一个actor，负责判断当前例子为真正例（保留）还是假正例（删去）。我们在实验中发现为每种关系训练一个actor的效果优于训练一个actor用于判断所有例子（无论是二分类型：判断所有例子的TP/FP，还是多分类型：将所有例子判断为关系1/关系2/.../关系n/FP）
+
 
