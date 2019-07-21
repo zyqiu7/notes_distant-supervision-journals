@@ -19,3 +19,11 @@
     （2）Feng(2018): 强化学习的奖励由预测概率计算(calculated from the prediction probabilities)[Reinforcement learning for relation classification from noisy data]
 
 ## 方法描述
+- 使用强化学习的条件之一：agent的学习环境为马尔可夫决策过程（Markov Decision Process， MDP）。传统的关系抽取的输入不能满足句子间相互独立的条件，因此，我们将先前的状态也加入当前状态的表示中，使之满足MDP
+- 我们的方法使用策略网络（Policy Network），而不是 Deep Q Network。 原因：  
+  （1）每个action后的奖励无法计算（只能计算结束一次训练集处理后的总奖励）
+  （2）策略网络的stochastic policy防止agent卡死在某一状态（intermediate state）
+#### 强化学习中的状态表示（States）
+- 将句子转为向量（sematic and syntatic infomation of a sentence is represented by a continuous real value vector）
+- utilize both word embedding and pposution embedding to convert sentences into vectors 
+
